@@ -9,9 +9,10 @@ import { useRef, useEffect } from 'react'
 interface Props {
 	children: React.ReactNode
 	cssClass?: string | undefined
+	style?: object | undefined
 }
 
-const AnimatedDiv: React.FC<Props> = ({ children, cssClass }) => {
+const AnimatedDiv: React.FC<Props> = ({ children, cssClass, style }) => {
 	const ref = useRef<HTMLDivElement | null>(null)
 
 	useEffect(() => {
@@ -38,7 +39,7 @@ const AnimatedDiv: React.FC<Props> = ({ children, cssClass }) => {
 	}, [])
 
 	return (
-		<div ref={ref} className={cssClass}>
+		<div ref={ref} className={cssClass} style={style}>
 			{children}
 		</div>
 	)
