@@ -1,0 +1,101 @@
+@use '@/app/base';
+
+.header {
+	background-color: white;
+	padding: 10px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+
+.headerContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	.navigation {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	p {
+		font-size: 1rem;
+		color: base.$title;
+		position: relative;
+		text-transform: uppercase;
+	}
+
+	p:after {
+		content: '';
+		background-color: base.$highlight;
+		position: absolute;
+		width: 0;
+		height: 2px;
+		right: 0;
+		display: block;
+		transition: width 0.2s ease;
+		-webkit-transition: width 0.2s ease;
+	}
+
+	p:hover:after {
+		width: 100%;
+		left: 0;
+	}
+}
+
+.contactButton {
+	background-color: base.$highlight;
+	color: white;
+	padding: 10px 20px;
+	font-size: 1rem;
+	border: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 56px;
+}
+
+.contactButton:hover {
+	background-color: base.$title;
+}
+
+.blurredText {
+	color: base.$title !important;
+}
+
+.hamburger {
+	display: none;
+	height: 24px;
+	align-items: center;
+	overflow: hidden;
+	transform: translateX(12px);
+	color: base.$title;
+}
+
+@media screen and (max-width: 1024px) {
+	.hamburger {
+		display: flex;
+	}
+
+	.navigation {
+		width: 100%;
+		padding: 5rem 0 2rem 0;
+		flex-direction: column;
+		// gap: 1rem !important;
+	}
+
+	.contactButtonContainer {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 3rem;
+	}
+
+	.hidden {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 768px) {
+}

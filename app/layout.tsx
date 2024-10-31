@@ -1,12 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.scss'
 
-// fonts
-import { Lato } from 'next/font/google'
-const lato = Lato({
-	subsets: ['latin'],
-	weight: '400'
-})
+// componments
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
 	title: 'Marguild',
@@ -23,7 +19,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={lato.className}>{children}</body>
+			<body>
+				<Header />
+				{children}
+			</body>
 		</html>
 	)
 }

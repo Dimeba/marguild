@@ -8,9 +8,11 @@ body {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 	scroll-padding-top: 10rem;
+	margin: 0;
 }
 
 // Font
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 %title {
@@ -20,4 +22,42 @@ body {
 
 h1 {
 	@extend %title;
+}
+
+h2 {
+	@extend %title;
+	font-size: 2rem;
+}
+
+h3 {
+	@extend %title;
+	font-size: 1rem;
+}
+
+p,
+a {
+	font-size: 0.875rem;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+section {
+	padding: 0 100px;
+}
+
+.container {
+	max-width: 1080px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
 }
