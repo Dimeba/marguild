@@ -1,5 +1,3 @@
-import { title } from 'process'
-
 export const highlights = {
 	title: 'Why choose us?',
 	description:

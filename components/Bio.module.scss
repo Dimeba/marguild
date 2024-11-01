@@ -1,0 +1,43 @@
+@use '@/app/base';
+
+.bio {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+	padding: 100px 0;
+}
+
+.imageContainer {
+	padding-top: 2rem;
+	padding-left: 2rem;
+}
+
+.image {
+	position: relative;
+}
+
+.info {
+	grid-column: span 2;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.titleContainer {
+	hr {
+		width: 5rem;
+		border-top: 2px dashed base.$highlight;
+		margin: 1.5rem 0;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+	.bio {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+}
