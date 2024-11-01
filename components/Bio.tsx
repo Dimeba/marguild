@@ -13,7 +13,15 @@ const Bio = () => {
 		<section>
 			<div className={`${styles.bio} container`}>
 				<AnimatedDiv cssClass={styles.imageContainer}>
-					<div className={styles.image}></div>
+					<div className={styles.border}></div>
+					<div className={styles.image}>
+						<Image
+							src='/nick.jpg'
+							alt='Nick Bratos'
+							layout='fill'
+							objectFit='cover'
+						/>
+					</div>
 				</AnimatedDiv>
 
 				<div className={styles.info}>

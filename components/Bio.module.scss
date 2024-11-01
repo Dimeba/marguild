@@ -10,10 +10,24 @@
 .imageContainer {
 	padding-top: 2rem;
 	padding-left: 2rem;
+	position: relative;
 }
 
 .image {
 	position: relative;
+	aspect-ratio: 0.7/1;
+	width: 100%;
+	border-radius: 10px;
+}
+
+.border {
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	aspect-ratio: 0.7/1;
+	border: 2px dashed base.$highlight;
 }
 
 .info {
@@ -35,6 +49,14 @@
 }
 
 @media screen and (max-width: 768px) {
+	.imageContainer {
+		padding: 0;
+	}
+
+	.border {
+		display: none;
+	}
+
 	.bio {
 		display: flex;
 		flex-direction: column;
