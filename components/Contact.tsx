@@ -84,6 +84,9 @@ const Contact = () => {
 							<button type='submit' disabled={status === 'pending'}>
 								Send
 							</button>
+							{status === 'ok' && (
+								<p className={styles.success}>Form submitted successfully</p>
+							)}
 						</form>
 					</div>
 				</div>
