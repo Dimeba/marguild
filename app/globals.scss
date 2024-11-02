@@ -13,7 +13,7 @@ body {
 * {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	scroll-padding-top: 10rem;
+	scroll-padding-top: 95px;
 	margin: 0;
 }
 
@@ -45,7 +45,8 @@ h3 {
 }
 
 p,
-a {
+a,
+li {
 	color: inherit;
 	font-size: 0.875rem;
 	font-family: 'Lato', sans-serif;
@@ -61,12 +62,6 @@ a {
 
 .largeText {
 	font-size: 1rem;
-}
-
-ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 .container {

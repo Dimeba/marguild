@@ -1,0 +1,25 @@
+@use '@/app/base';
+
+.toc {
+	padding-top: 150px;
+	padding-bottom: 100px;
+
+	h3 {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+
+	p,
+	ul {
+		margin-bottom: 0.5rem;
+	}
+
+	strong {
+		color: base.$title;
+	}
+}
+
+.subtitle {
+	font-size: 1.2rem;
+}

@@ -9,7 +9,7 @@ import { highlights } from '@/content/about'
 
 const Highlights = () => {
 	return (
-		<section className={styles.highlightsSection}>
+		<section id='about' className={styles.highlightsSection}>
 			<div className={`content`}>
 				<AnimatedDiv cssClass={styles.titleSection}>
 					<h2>{highlights.title}</h2>
