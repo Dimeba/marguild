@@ -4,9 +4,6 @@ import styles from './Contact.module.scss'
 // components
 import AnimatedDiv from './AnimatedDiv'
 import Image from 'next/image'
-import { TfiEmail } from 'react-icons/tfi'
-import { FiPhoneCall } from 'react-icons/fi'
-import { FiMapPin } from 'react-icons/fi'
 
 // content
 import { contact } from '@/content/contact'
@@ -50,7 +47,7 @@ const Contact = () => {
 			<div className={`container ${styles.contactColumns}`}>
 				<AnimatedDiv cssClass={styles.contactColumn}>
 					<div className={styles.columnTitle}>
-						<TfiEmail size={20} />
+						<Image src='/email.svg' alt='Email Icon' width={20} height={20} />
 						<h3>Email</h3>
 					</div>
 					{contact.email.map((email, index) => (
@@ -60,7 +57,7 @@ const Contact = () => {
 
 				<AnimatedDiv cssClass={styles.contactColumn}>
 					<div className={styles.columnTitle}>
-						<FiPhoneCall size={20} />
+						<Image src='/phone.svg' alt='Phone Icon' width={20} height={20} />
 						<h3>Phone</h3>
 					</div>
 					{contact.phone.map((phone, index) => (
@@ -70,7 +67,12 @@ const Contact = () => {
 
 				<AnimatedDiv cssClass={styles.contactColumn}>
 					<div className={styles.columnTitle}>
-						<FiMapPin size={20} />
+						<Image
+							src='/address.svg'
+							alt='Address Icon'
+							width={20}
+							height={20}
+						/>
 						<h3>Address</h3>
 					</div>
 					{contact.address.map((address, index) => (
