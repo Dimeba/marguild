@@ -67,16 +67,7 @@ export const highlights = {
 }
 
 export const nick = {
-	bio: [
-		'Highly accomplished maritime industry leader and C-Suite consultant with 25 years of experience in',
-		'senior management, consulting, and operational excellence. Proven track record of success in',
-		'delivering sustainable and profitable growth, while driving operational efficiency and compliance',
-		'with regulatory policies. Strong background in strategic planning, business development, HSE / Risk',
-		'management, large-scale offshore projects, and vessel / ship management. Skilled communicator',
-		'and leader, able to build and lead high-performing teams. Subject matter expert in the maritime',
-		'industry, particularly in marine claims and dispute resolution, with extensive experience in the',
-		'cruise and marine construction industry.'
-	],
+	bio: 'Highly accomplished maritime industry leader and C-Suite consultant with 25 years of experience in senior management, consulting, and operational excellence. Proven track record of success in delivering sustainable and profitable growth, while driving operational efficiency and compliance with regulatory policies. Strong background in strategic planning, business development, HSE / Risk management, large-scale offshore projects, and vessel / ship management. Skilled communicator and leader, able to build and lead high-performing teams. Subject matter expert in the maritime industry, particularly in marine claims and dispute resolution, with extensive experience in the cruise and marine construction industry.',
 	qualifications: [
 		'BA in International Relations and  Diplomacy',
 		'Master Mariner',
