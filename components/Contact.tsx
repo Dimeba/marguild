@@ -4,6 +4,9 @@ import styles from './Contact.module.scss'
 // components
 import AnimatedDiv from './AnimatedDiv'
 import Image from 'next/image'
+import { TfiEmail } from 'react-icons/tfi'
+import { FiPhoneCall } from 'react-icons/fi'
+import { FiMapPin } from 'react-icons/fi'
 
 // content
 import { contact } from '@/content/contact'
@@ -46,21 +49,30 @@ const Contact = () => {
 
 			<div className={`container ${styles.contactColumns}`}>
 				<AnimatedDiv cssClass={styles.contactColumn}>
-					<h3>Email</h3>
+					<div className={styles.columnTitle}>
+						<TfiEmail size={20} />
+						<h3>Email</h3>
+					</div>
 					{contact.email.map((email, index) => (
 						<p key={index}>{email}</p>
 					))}
 				</AnimatedDiv>
 
 				<AnimatedDiv cssClass={styles.contactColumn}>
-					<h3>Phone</h3>
+					<div className={styles.columnTitle}>
+						<FiPhoneCall size={20} />
+						<h3>Phone</h3>
+					</div>
 					{contact.phone.map((phone, index) => (
 						<p key={index}>{phone}</p>
 					))}
 				</AnimatedDiv>
 
 				<AnimatedDiv cssClass={styles.contactColumn}>
-					<h3>Address</h3>
+					<div className={styles.columnTitle}>
+						<FiMapPin size={20} />
+						<h3>Address</h3>
+					</div>
 					{contact.address.map((address, index) => (
 						<p key={index}>{address}</p>
 					))}
