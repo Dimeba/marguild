@@ -7,7 +7,7 @@ export const services = [
 			'Process Optimization',
 			'Operational Excellence'
 		],
-		img: './services/project-1.jpg'
+		img: '/services/project-1.jpg'
 	},
 	{
 		title: ['Claims, Dispute Resolution, and Legal Support Work'],
@@ -17,7 +17,7 @@ export const services = [
 			'Casualty Investigations and Due Diligence',
 			' Budget and Cost Control'
 		],
-		img: './services/project-2.jpg'
+		img: '/services/project-2.jpg'
 	},
 	{
 		title: ['Operations and Regulatory Compliance'],
@@ -28,7 +28,7 @@ export const services = [
 			'Project Management',
 			' Change Management'
 		],
-		img: './services/project-3.jpg'
+		img: '/services/project-3.jpg'
 	},
 	{
 		title: ['Assessment, Attendance, and Representation'],
@@ -38,6 +38,6 @@ export const services = [
 			'Inspections, Audits, Surveys',
 			'Studies, Verification, Evaluation'
 		],
-		img: './services/project-4.jpg'
+		img: '/services/project-4.jpg'
 	}
 ]
