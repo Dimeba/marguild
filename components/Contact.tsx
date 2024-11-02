@@ -76,7 +76,6 @@ const Contact = () => {
 								name='firstName'
 								placeholder='First Name'
 								required
-								value='Filip'
 							/>
 							<input
 								type='text'
