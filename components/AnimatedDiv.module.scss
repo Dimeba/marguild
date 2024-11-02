@@ -1,12 +1,10 @@
-.animated {
-	animation: slideIn 0.5s ease-in-out;
+.animatedDiv {
+	opacity: 0;
+	transition: 0.5s;
+	transform: translateY(50%);
 }
 
-@keyframes slideIn {
-	0% {
-		transform: translateY(50%);
-	}
-	100% {
-		transform: translateX(0);
-	}
+.animated {
+	opacity: 1 !important;
+	transform: translateX(0) !important;
 }

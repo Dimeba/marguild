@@ -38,7 +38,11 @@ const AnimatedDiv: React.FC<Props> = ({ children, cssClass, style }) => {
 	}, [])
 
 	return (
-		<div ref={ref} className={cssClass} style={style}>
+		<div
+			ref={ref}
+			className={`${cssClass} ${styles.animatedDiv}`}
+			style={style}
+		>
 			{children}
 		</div>
 	)
