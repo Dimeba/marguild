@@ -30,7 +30,7 @@ export const services = [
 			'Inspections, Audits, Surveys',
 			'Studies, Verification, Evaluation'
 		],
-		img: '/services/project-4.jpg'
+		img: '/services/MOQ.jpg'
 	},
 	{
 		title: ['C-Suite Consulting and Executive Leadership'],
