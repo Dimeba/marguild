@@ -82,8 +82,8 @@ const Header = () => {
 					))}
 
 					<a
-						href='https://app.junipersquare.com/login?path=%2Fi%2Faslandcap'
-						aria-label='Investor Login'
+						href='/#contact'
+						aria-label='Link to contact form'
 						className={styles.contactButton}
 					>
 						Contact
