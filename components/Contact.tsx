@@ -70,14 +70,28 @@ const Contact = () => {
 							alt='Contact Us Image'
 						/>
 					</AnimatedDiv>
-					<div className={styles.content}>
+					<AnimatedDiv cssClass={styles.content}>
 						<form name='contact' onSubmit={handleFormSubmit}>
-							<input type='hidden' name='contact' value='contact' />
-							<input type='text' placeholder='First Name' required />
-							<input type='text' placeholder='Last Name' required />
-							<input type='email' placeholder='Email' required />
-							<input type='text' placeholder='Phone' required />
-							<textarea placeholder='Message' required></textarea>
+							<input type='hidden' name='form-name' value='contact' />
+							<input
+								type='text'
+								name='firstName'
+								placeholder='First Name'
+								required
+							/>
+							<input
+								type='text'
+								name='lastName'
+								placeholder='Last Name'
+								required
+							/>
+							<input type='email' name='email' placeholder='Email' required />
+							<input type='text' name='phone' placeholder='Phone' required />
+							<textarea
+								name='message'
+								placeholder='Message'
+								required
+							></textarea>
 
 							<label htmlFor='terms' className={styles.terms}>
 								<input type='checkbox' name='terms' id='terms' required />I have
@@ -90,7 +104,7 @@ const Contact = () => {
 								<p className={styles.success}>Form submitted successfully</p>
 							)}
 						</form>
-					</div>
+					</AnimatedDiv>
 				</div>
 			</div>
 
