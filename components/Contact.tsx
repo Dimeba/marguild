@@ -49,8 +49,6 @@ const Contact = () => {
 			setStatus('error')
 			setError(`${e}`)
 		}
-
-		console.log(status, error)
 	}
 
 	return (
@@ -78,6 +76,7 @@ const Contact = () => {
 								name='firstName'
 								placeholder='First Name'
 								required
+								value='Filip'
 							/>
 							<input
 								type='text'
