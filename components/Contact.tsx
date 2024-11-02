@@ -1,3 +1,5 @@
+'use client'
+
 // styles
 import styles from './Contact.module.scss'
 
@@ -5,10 +7,50 @@ import styles from './Contact.module.scss'
 import AnimatedDiv from './AnimatedDiv'
 import Image from 'next/image'
 
+// hooks
+import { useState } from 'react'
+
 // content
 import { contact } from '@/content/contact'
 
 const Contact = () => {
+	const [status, setStatus] = useState<string | null>(null)
+	const [error, setError] = useState<string | null>(null)
+
+	interface FormEvent extends React.FormEvent<HTMLFormElement> {}
+
+	interface FormData {
+		[key: string]: string
+	}
+
+	const handleFormSubmit = async (event: FormEvent): Promise<void> => {
+		event.preventDefault()
+		try {
+			setStatus('pending')
+			setError(null)
+			const myForm = event.target as HTMLFormElement
+			const formData = new FormData(myForm)
+			const formObject: FormData = {}
+			formData.forEach((value, key) => {
+				formObject[key] = value as string
+			})
+			const res = await fetch('/__forms.html', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: new URLSearchParams(formObject).toString()
+			})
+			if (res.status === 200) {
+				setStatus('ok')
+			} else {
+				setStatus('error')
+				setError(`${res.status} ${res.statusText}`)
+			}
+		} catch (e) {
+			setStatus('error')
+			setError(`${e}`)
+		}
+	}
+
 	return (
 		<section id='contact' className={styles.contactSection}>
 			<div className='content'>
@@ -27,12 +69,8 @@ const Contact = () => {
 						/>
 					</AnimatedDiv>
 					<div className={styles.content}>
-						<form
-							name='contact'
-							method='post'
-							action='/api/submit-form'
-							encType='multipart/form-data'
-						>
+						<form name='contact' onSubmit={handleFormSubmit}>
+							<input type='hidden' name='contact' value='contact' />
 							<input type='text' placeholder='First Name' required />
 							<input type='text' placeholder='Last Name' required />
 							<input type='email' placeholder='Email' required />
@@ -43,7 +81,9 @@ const Contact = () => {
 								<input type='checkbox' name='terms' id='terms' required />I have
 								read the Terms and Conditions
 							</label>
-							<button type='submit'>Send</button>
+							<button type='submit' disabled={status === 'pending'}>
+								Send
+							</button>
 						</form>
 					</div>
 				</div>
