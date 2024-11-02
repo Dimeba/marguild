@@ -1,25 +1,5 @@
 export const services = [
 	{
-		title: ['C-Suite Consulting and Executive Leadership'],
-		list: [
-			'Strategic Planning',
-			'Business Development',
-			'Process Optimization',
-			'Operational Excellence'
-		],
-		img: '/services/project-1.jpg'
-	},
-	{
-		title: ['Claims, Dispute Resolution, and Legal Support Work'],
-		list: [
-			'Expert Witness Reports and Opinion',
-			'Guidance, Advice, and Support',
-			'Casualty Investigations and Due Diligence',
-			' Budget and Cost Control'
-		],
-		img: '/services/project-2.jpg'
-	},
-	{
 		title: ['Operations and Regulatory Compliance'],
 		list: [
 			'HSE and Risk Management',
@@ -30,6 +10,18 @@ export const services = [
 		],
 		img: '/services/project-3.jpg'
 	},
+
+	{
+		title: ['Claims, Dispute Resolution, and Legal Support Work'],
+		list: [
+			'Expert Witness Reports and Opinion',
+			'Guidance, Advice, and Support',
+			'Casualty Investigations and Due Diligence',
+			' Budget and Cost Control'
+		],
+		img: '/services/legal.jpg'
+	},
+
 	{
 		title: ['Assessment, Attendance, and Representation'],
 		list: [
@@ -39,5 +31,15 @@ export const services = [
 			'Studies, Verification, Evaluation'
 		],
 		img: '/services/project-4.jpg'
+	},
+	{
+		title: ['C-Suite Consulting and Executive Leadership'],
+		list: [
+			'Strategic Planning',
+			'Business Development',
+			'Process Optimization',
+			'Operational Excellence'
+		],
+		img: '/services/csuite.jpg'
 	}
 ]

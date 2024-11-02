@@ -2,7 +2,6 @@
 
 .highlightsSection {
 	padding: 100px 0;
-	background-color: base.$background;
 
 	h2,
 	p {
@@ -56,6 +55,7 @@
 
 	p {
 		text-align: left;
+		text-wrap: balance;
 	}
 }
 

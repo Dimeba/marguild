@@ -19,33 +19,32 @@ const Slider: React.FC<Props> = ({ images }) => {
 	const [transitionDuration, setTransitionDuration] = useState<number>(0)
 	const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-	const startAnimation = () => {
-		// Start scaling from 1.2 to 1 over 5 seconds
-		setTransitionDuration(5)
-		setSize(1)
+	const handleImageLoaded = () => {
+		// Reset the size and transition duration
+		setSize(1.2)
+		setTransitionDuration(0)
 
-		// After 5 seconds, reset size and move to next image
-		timeoutRef.current = setTimeout(() => {
-			setTransitionDuration(0)
-			setSize(1.2)
-			setCurrentImage(prevImage => (prevImage + 1) % images.length)
+		// Start the animation in the next tick
+		setTimeout(() => {
+			// Start scaling from 1.2 to 1 over 5 seconds
+			setTransitionDuration(5)
+			setSize(1)
 
-			// Small delay before starting the next animation
+			// After 5 seconds, move to next image
 			timeoutRef.current = setTimeout(() => {
-				startAnimation()
-			}, 250)
-		}, 5000)
+				setCurrentImage(prevImage => (prevImage + 1) % images.length)
+			}, 5000)
+		}, 50) // Small delay to ensure style updates
 	}
 
 	useEffect(() => {
-		startAnimation()
-
+		// Clear any existing timeouts when currentImage changes
 		return () => {
 			if (timeoutRef.current) {
 				clearTimeout(timeoutRef.current)
 			}
 		}
-	}, [])
+	}, [currentImage])
 
 	return (
 		<div className={styles.slider}>
@@ -55,6 +54,7 @@ const Slider: React.FC<Props> = ({ images }) => {
 				fill
 				sizes='100vw'
 				className={styles.image}
+				onLoadingComplete={handleImageLoaded}
 				style={{
 					transform: `scale(${size})`,
 					transition: `transform ${transitionDuration}s`

@@ -11,7 +11,7 @@ import { nick } from '@/content/about'
 
 const Bio = () => {
 	return (
-		<section>
+		<section id='about' className={styles.bioSection}>
 			<div className={`${styles.bio} container`}>
 				<AnimatedDiv cssClass={styles.imageContainer}>
 					<div className={styles.border}></div>

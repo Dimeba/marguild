@@ -1,5 +1,9 @@
 @use '@/app/base';
 
+.bioSection {
+	background-color: rgba($color: base.$backgroundDark, $alpha: 0.35);
+}
+
 .bio {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -51,6 +55,10 @@
 		width: 5rem;
 		border-top: 2px dashed base.$highlight;
 		margin: 1.5rem 0;
+	}
+
+	p {
+		text-wrap: balance;
 	}
 }
 

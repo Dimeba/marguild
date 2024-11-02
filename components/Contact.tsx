@@ -62,7 +62,7 @@ const Contact = () => {
 				<div className={styles.contact}>
 					<AnimatedDiv cssClass={styles.image}>
 						<Image
-							src='/slider/p04.jpg'
+							src='/map.jpg'
 							fill
 							style={{ objectFit: 'cover' }}
 							alt='Contact Us Image'

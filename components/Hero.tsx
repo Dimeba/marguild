@@ -4,7 +4,6 @@ import styles from './Hero.module.scss'
 // components
 import Image from 'next/image'
 import Slider from './Slider'
-import AnimatedDiv from './AnimatedDiv'
 
 // content
 import { hero } from '@/content/hero'

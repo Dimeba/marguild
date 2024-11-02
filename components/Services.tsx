@@ -29,6 +29,7 @@ const Services = () => {
 							<AnimatedDiv
 								cssClass={styles.imageContainer}
 								style={{ gridArea: 'item1' }}
+								animation={index % 2 === 0 ? 'right' : 'left'}
 							>
 								<div className={styles.border}></div>
 								<div className={styles.image}>
@@ -43,6 +44,7 @@ const Services = () => {
 							<AnimatedDiv
 								cssClass={styles.content}
 								style={{ gridArea: 'item2' }}
+								animation={index % 2 === 0 ? 'left' : 'right'}
 							>
 								<div>
 									<h3>{service.title[0]}</h3>
