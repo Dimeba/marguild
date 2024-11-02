@@ -1,7 +1,7 @@
 @use '@/app/base';
 
 .servicesSection {
-	background-color: base.$background;
+	background-color: rgba($color: base.$backgroundDark, $alpha: 0.35);
 	padding: 100px 0;
 
 	h2 {

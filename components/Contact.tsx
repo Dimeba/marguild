@@ -17,6 +17,23 @@ const Contact = () => {
 	const [status, setStatus] = useState<string | null>(null)
 	const [error, setError] = useState<string | null>(null)
 
+	// fields
+	const [firstName, setFirstName] = useState<string>('')
+	const [lastName, setLastName] = useState<string>('')
+	const [email, setEmail] = useState<string>('')
+	const [phone, setPhone] = useState<string>('')
+	const [message, setMessage] = useState<string>('')
+	const [terms, setTerms] = useState<boolean>(false)
+
+	const resetFields = () => {
+		setFirstName('')
+		setLastName('')
+		setEmail('')
+		setPhone('')
+		setMessage('')
+		setTerms(false)
+	}
+
 	interface FormEvent extends React.FormEvent<HTMLFormElement> {}
 
 	interface FormData {
@@ -41,6 +58,7 @@ const Contact = () => {
 			})
 			if (res.status === 200) {
 				setStatus('ok')
+				resetFields()
 			} else {
 				setStatus('error')
 				setError(`${res.status} ${res.statusText}`)
@@ -69,6 +87,16 @@ const Contact = () => {
 						/>
 					</AnimatedDiv>
 					<AnimatedDiv cssClass={styles.content}>
+						{status === 'ok' && (
+							<p className={styles.success}>Message sent successfully!</p>
+						)}
+						{status === 'error' && (
+							<p className={styles.success}>
+								An error occurred. Please try again later.
+								{error && <span>{error}</span>}
+							</p>
+						)}
+
 						<form name='contact' onSubmit={handleFormSubmit}>
 							<input type='hidden' name='form-name' value='contact' />
 							<input
@@ -76,31 +104,53 @@ const Contact = () => {
 								name='firstName'
 								placeholder='First Name'
 								required
+								value={firstName}
+								onChange={e => setFirstName(e.target.value)}
 							/>
 							<input
 								type='text'
 								name='lastName'
 								placeholder='Last Name'
 								required
+								value={lastName}
+								onChange={e => setLastName(e.target.value)}
 							/>
-							<input type='email' name='email' placeholder='Email' required />
-							<input type='text' name='phone' placeholder='Phone' required />
+							<input
+								type='email'
+								name='email'
+								placeholder='Email'
+								required
+								value={email}
+								onChange={e => setEmail(e.target.value)}
+							/>
+							<input
+								type='text'
+								name='phone'
+								placeholder='Phone'
+								required
+								value={phone}
+								onChange={e => setPhone(e.target.value)}
+							/>
 							<textarea
 								name='message'
 								placeholder='Message'
 								required
+								value={message}
+								onChange={e => setMessage(e.target.value)}
 							></textarea>
 
 							<label htmlFor='terms' className={styles.terms}>
-								<input type='checkbox' name='terms' id='terms' required />I have
-								read the Terms and Conditions
+								<input
+									type='checkbox'
+									name='terms'
+									id='terms'
+									required
+									checked={terms}
+									onChange={e => setTerms(e.target.checked)}
+								/>
+								I have read the Terms and Conditions
 							</label>
-							<button type='submit' disabled={status === 'pending'}>
-								Send
-							</button>
-							{status === 'ok' && (
-								<p className={styles.success}>Form submitted successfully</p>
-							)}
+							<button type='submit'>Send</button>
 						</form>
 					</AnimatedDiv>
 				</div>
