@@ -9,11 +9,12 @@
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
 	color: white;
 	position: relative;
 	overflow: hidden;
-	padding: 100px 0;
+	padding-top: 100px;
+	padding-bottom: 50px;
 }
 
 .content {
@@ -38,8 +39,12 @@
 }
 
 .subtitle {
-	font-size: 2rem;
+	font-size: 2.5rem;
 	margin-bottom: 0.5rem;
+
+	span {
+		text-wrap: nowrap;
+	}
 }
 
 .location {
@@ -49,5 +54,57 @@
 
 	p {
 		font-size: 1.5rem;
+	}
+}
+
+.anim1 {
+	animation: headingAnimation-h1 6s;
+}
+.anim2 {
+	animation: headingAnimation-h2 6s;
+}
+.anim3 {
+	animation: headingAnimation-h3 6s;
+}
+
+// animation
+@keyframes headingAnimation-h1 {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes headingAnimation-h2 {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	15% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	40% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes headingAnimation-h3 {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	30% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	55% {
+		transform: translateX(0);
+		opacity: 1;
 	}
 }
