@@ -1,0 +1,125 @@
+@use '@/app/base';
+
+.contactSection {
+	padding: 100px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+
+	h2 {
+		text-align: center;
+	}
+
+	hr {
+		margin-bottom: 0;
+	}
+}
+
+.titleSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
+.contact {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2rem;
+	width: 100%;
+}
+
+.image {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.content {
+	form {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1rem;
+	}
+
+	input {
+		padding: 0.5rem 0;
+		border: none;
+		border-bottom: 1px dashed base.$title;
+	}
+
+	textarea {
+		@extend input;
+		grid-column: span 2;
+		height: 100px;
+	}
+
+	input:focus {
+		outline: none;
+		border-bottom: 1px dashed base.$highlight;
+	}
+
+	.terms {
+		grid-column: span 2;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	button {
+		grid-column: span 2;
+		width: fit-content;
+		padding: 0.75rem 2rem;
+		border-radius: 50px;
+		letter-spacing: 0.5;
+	}
+}
+
+.contactColumns {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+}
+
+.contactColumn {
+	padding-left: 1.5rem;
+	border-left: 1px solid rgba($color: base.$title, $alpha: 0.25);
+
+	h3 {
+		margin-bottom: 1rem;
+	}
+}
+
+.contactColumn:first-child {
+	border-left: none;
+	padding-left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.contact {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.contact {
+		form {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.contactColumns {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.contactColumn {
+		padding-left: 0;
+		border-left: none;
+	}
+}

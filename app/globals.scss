@@ -46,7 +46,10 @@ h3 {
 
 p,
 a,
-li {
+li,
+label,
+input,
+textarea {
 	color: inherit;
 	font-size: 0.875rem;
 	font-family: 'Lato', sans-serif;
@@ -58,6 +61,19 @@ li {
 
 a {
 	text-decoration: none;
+}
+
+button {
+	font-family: 'Lato', sans-serif;
+	cursor: pointer;
+	text-transform: uppercase;
+	background-color: base.$highlight;
+	color: white;
+	border: none;
+}
+
+button:hover {
+	background-color: base.$title;
 }
 
 .largeText {
