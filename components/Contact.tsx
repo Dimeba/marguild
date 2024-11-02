@@ -21,13 +21,27 @@ const Contact = () => {
 					<AnimatedDiv cssClass={styles.image}>
 						<Image
 							src='/slider/p04.jpg'
-							layout='fill'
-							objectFit='cover'
+							fill
+							style={{ objectFit: 'cover' }}
 							alt='Contact Us Image'
 						/>
 					</AnimatedDiv>
-					<AnimatedDiv cssClass={styles.content}>
-						<form>
+					<div className={styles.content}>
+						<form
+							name='contact'
+							method='POST'
+							data-netlify='true'
+							netlify-honeypot='bot-field'
+						>
+							{/* Hidden input to identify the form */}
+							<input type='hidden' name='form-name' value='contact' />
+							{/* Honeypot field */}
+							<p className={styles.hidden}>
+								<label>
+									Don't fill this out if you're human:{' '}
+									<input name='bot-field' />
+								</label>
+							</p>
 							<input type='text' placeholder='First Name' required />
 							<input type='text' placeholder='Last Name' required />
 							<input type='email' placeholder='Email' required />
@@ -40,7 +54,7 @@ const Contact = () => {
 							</label>
 							<button type='submit'>Send</button>
 						</form>
-					</AnimatedDiv>
+					</div>
 				</div>
 			</div>
 

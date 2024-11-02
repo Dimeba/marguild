@@ -34,8 +34,8 @@ const Services = () => {
 								<div className={styles.image}>
 									<Image
 										src={service.img}
-										layout='fill'
-										objectFit='cover'
+										fill
+										style={{ objectFit: 'cover' }}
 										alt={service.title[0]}
 									/>
 								</div>

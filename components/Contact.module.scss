@@ -104,6 +104,10 @@
 	}
 }
 
+.hidden {
+	display: none;
+}
+
 @media screen and (max-width: 1024px) {
 	.contact {
 		display: flex;

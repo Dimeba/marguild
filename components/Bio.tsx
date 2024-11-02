@@ -19,8 +19,8 @@ const Bio = () => {
 						<Image
 							src='/nick.jpg'
 							alt='Nick Bratos'
-							layout='fill'
-							objectFit='cover'
+							fill
+							style={{ objectFit: 'cover' }}
 						/>
 					</div>
 				</AnimatedDiv>
