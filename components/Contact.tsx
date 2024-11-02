@@ -29,19 +29,10 @@ const Contact = () => {
 					<div className={styles.content}>
 						<form
 							name='contact'
-							method='POST'
-							data-netlify='true'
-							netlify-honeypot='bot-field'
+							method='post'
+							action='/api/submit-form'
+							encType='multipart/form-data'
 						>
-							{/* Hidden input to identify the form */}
-							<input type='hidden' name='form-name' value='contact' />
-							{/* Honeypot field */}
-							<p className={styles.hidden}>
-								<label>
-									Don't fill this out if you're human:{' '}
-									<input name='bot-field' />
-								</label>
-							</p>
 							<input type='text' placeholder='First Name' required />
 							<input type='text' placeholder='Last Name' required />
 							<input type='email' placeholder='Email' required />
