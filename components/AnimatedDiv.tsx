@@ -23,8 +23,7 @@ const AnimatedDiv: React.FC<Props> = ({ children, cssClass, style }) => {
 				([entry]) => {
 					if (entry.isIntersecting) {
 						node.classList.add(styles.animated)
-					} else {
-						node.classList.remove(styles.animated)
+						observer.unobserve(node) // Stop observing after animation starts
 					}
 				},
 				{ threshold: 0.1 }
@@ -33,7 +32,7 @@ const AnimatedDiv: React.FC<Props> = ({ children, cssClass, style }) => {
 			observer.observe(node)
 
 			return () => {
-				observer.unobserve(node)
+				observer.disconnect()
 			}
 		}
 	}, [])
