@@ -1,0 +1,16 @@
+@use '@/app/base';
+
+.bulletPoint {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.circleIcon {
+	color: base.$highlight;
+}
+
+.text {
+	font-style: italic;
+}

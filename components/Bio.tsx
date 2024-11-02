@@ -4,6 +4,7 @@ import styles from './Bio.module.scss'
 // components
 import Image from 'next/image'
 import AnimatedDiv from './AnimatedDiv'
+import BulletPoint from './BulletPoint'
 
 // content
 import { nick } from '@/content/about'
@@ -25,17 +26,25 @@ const Bio = () => {
 				</AnimatedDiv>
 
 				<div className={styles.info}>
-					<AnimatedDiv cssClass={styles.titleContainer}>
-						<h2>Capt. Nick Bratos</h2>
+					<div className={styles.content}>
+						<AnimatedDiv cssClass={styles.titleContainer}>
+							<h2>Capt. Nick Bratos</h2>
 
-						<hr />
+							<hr />
 
-						<p>{nick.bio}</p>
-					</AnimatedDiv>
+							<p>{nick.bio}</p>
+						</AnimatedDiv>
 
-					<AnimatedDiv cssClass={styles.qualifications}>
-						<h3>Education and Qualifications</h3>
-					</AnimatedDiv>
+						<AnimatedDiv cssClass={styles.qualifications}>
+							<h3>Education and Qualifications</h3>
+
+							<ul>
+								{nick.qualifications.map((qualification, index) => (
+									<BulletPoint key={index} text={qualification} />
+								))}
+							</ul>
+						</AnimatedDiv>
+					</div>
 				</div>
 			</div>
 		</section>

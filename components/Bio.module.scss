@@ -15,9 +15,10 @@
 
 .image {
 	position: relative;
-	aspect-ratio: 0.7/1;
+	aspect-ratio: 0.83/1;
 	width: 100%;
 	border-radius: 10px;
+	overflow: hidden;
 }
 
 .border {
@@ -26,12 +27,20 @@
 	top: 0;
 	left: 0;
 	width: 90%;
-	aspect-ratio: 0.7/1;
+	aspect-ratio: 0.83/1;
 	border: 2px dashed base.$highlight;
 }
 
 .info {
 	grid-column: span 2;
+
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-gap: 2rem;
+}
+
+.content {
+	grid-column: 2 / 9;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
@@ -45,7 +54,21 @@
 	}
 }
 
+.qualifications {
+	h3 {
+		margin-bottom: 1.5rem;
+	}
+
+	ul {
+		columns: 2;
+		column-gap: 4rem;
+	}
+}
+
 @media screen and (max-width: 1024px) {
+	.content {
+		grid-column: span 8;
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -61,5 +84,21 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		padding-top: 50px;
+	}
+
+	.info {
+		display: block;
+	}
+
+	.content {
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.qualifications {
+		ul {
+			columns: 1;
+		}
 	}
 }
