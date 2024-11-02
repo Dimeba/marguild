@@ -49,6 +49,8 @@ const Contact = () => {
 			setStatus('error')
 			setError(`${e}`)
 		}
+
+		console.log(status, error)
 	}
 
 	return (
